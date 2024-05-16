@@ -451,7 +451,7 @@ nav {
 /* 当布局变为纵向时的样式 */
 @media screen and (orientation: portrait) {
   .splitter {
-    visibility: hidden;
+    display: none;
     /* 在纵向布局中隐藏分割线但保留位置 */
   }
 }
