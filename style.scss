@@ -435,27 +435,6 @@ nav {
   z-index: 10;
   left: 30vw;/* 分割线与左边页面的右边界对齐 */
 }
-/* 当布局变为横向时的样式 */
-@media screen and (orientation: landscape) {
-  .splitter {
-    display: block;
-    width: 5px;
-    height: 100%;
-    cursor: col-resize;
-    left: 30vw;
-    /* 在横向布局中，分割线从整个窗口宽度的百分之三十处开始 */
-    top: 0;
-    /* 设置分割线的初始位置为顶部 */
-  }
-}
-
-/* 当布局变为纵向时的样式 */
-@media screen and (orientation: portrait) {
-  .splitter {
-    display: none;
-    /* 在纵向布局中隐藏分割线但保留位置 */
-  }
-}
 
 // content
 

@@ -35,6 +35,15 @@
     });
 
     function handleMouseMove(event) {
+      // 判断 nav 是否在 main 上方，如果是，则隐藏分割线
+      if (nav.offsetTop  < main.offsetTop-10) {
+        divider.style.display = 'none';
+        divider.style.visibility = 'hidden';
+        return;
+      } else {
+        divider.style.display = 'block';
+        divider.style.visibility = 'visible';
+      }
       if (!isDragging) return;
       const mouseX = event.clientX;
       const dividerWidth = divider.offsetWidth; // 获取分割条的宽度
