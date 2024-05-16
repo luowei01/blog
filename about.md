@@ -1,12 +1,3 @@
-<!--
- * @Author       : luoweiWHUT 1615108374@qq.com
- * @Date         : 2024-05-09 18:57:37
- * @LastEditors  : luoweiWHUT 1615108374@qq.com
- * @LastEditTime : 2024-05-17 00:39:57
- * @FilePath     : \blog\about.md
- * @Description  : 
- * Copyright (c) 2024 by luoweiWHUT email: 1615108374@qq.com, All Rights Reserved.
--->
 ---
 layout: default
 permalink: /about/
