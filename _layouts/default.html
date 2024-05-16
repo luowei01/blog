@@ -61,10 +61,11 @@
       }
     }
 
-    // 当布局方向变化时调用，确保分割线的可见性随时保持最新状态
-    window.addEventListener('orientationchange', () => {
+    // 使用 MutationObserver 监听 nav 元素的子节点变化
+    const observer = new MutationObserver(() => {
       updateDividerVisibility(); // 使用当前分割线位置更新可见性
     });
+    observer.observe(nav, { childList: true }); // 监听子节点变化
   </script>
 
   {% if page.toc==true %}
