@@ -313,7 +313,15 @@ img {
 /*********************/
 /* LAYOUT / SECTIONS */
 /*********************/
-
+//sidebar和content分割线
+.splitter {
+  width: 5px;
+  cursor: col-resize;
+  background-color: #ccc;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
 //
 // .sidebar
 //

@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+<div id="left-pane" class="pane"></div>
+<div id="splitter"></div>
+<div id="right-pane" class="pane"></div>
+
+<script>
+  const splitter = document.getElementById('splitter');
+  const leftPane = document.getElementById('left-pane');
+  const rightPane = document.getElementById('right-pane');
+
+  let isDragging = false;
+
+  splitter.addEventListener('mousedown', (event) => {
+    isDragging = true;
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
+  });
+
+  function handleMouseMove(event) {
+    if (!isDragging) return;
+    const leftWidth = event.clientX - leftPane.getBoundingClientRect().left;
+    leftPane.style.width = `${leftWidth}px`;
+  }
+
+  function handleMouseUp(event) {
+    isDragging = false;
+    document.removeEventListener('mousemove', handleMouseMove);
+    document.removeEventListener('mouseup', handleMouseUp);
+  }
+</script>
+
+<style>
+  .pane {
+    width: 50%;
+    height: 100%;
+    float: left;
+  }
+
+  #splitter {
+    width: 10px;
+    height: 100%;
+    float: left;
+    cursor: col-resize;
+    background-color: #ccc;
+  }
+</style>

@@ -1,8 +1,19 @@
+<!--
+ * @Author       : luoweiWHUT 1615108374@qq.com
+ * @Date         : 2024-05-09 18:57:36
+ * @LastEditors  : luoweiWHUT 1615108374@qq.com
+ * @LastEditTime : 2024-05-16 18:49:46
+ * @FilePath     : \blog\_layouts\default.html
+ * @Description  : 
+ * Copyright (c) 2024 by luoweiWHUT email: 1615108374@qq.com, All Rights Reserved.
+-->
 <!DOCTYPE html>
 <html>
   {% include head.html %}
   <body>
     {% include nav.html %}
+
+    <div id="splitter" class="splitter"></div>
 
     {% if page.toc==true %}
       <aside class="toc">
@@ -18,6 +29,31 @@
 
     {% include analytics.html %}
   </body>
+  
+  <script>
+    const divider = document.getElementById('splitter');
+    const main = document.getElementById('main');
+
+    let isDragging = false;
+
+    divider.addEventListener('mousedown', (event) => {
+      isDragging = true;
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+    });
+
+    function handleMouseMove(event) {
+      if (!isDragging) return;
+      const mainWidth = event.clientX;
+      main.style.width = `${mainWidth}px`;
+    }
+
+    function handleMouseUp(event) {
+      isDragging = false;
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+    }
+  </script>
 
   {% if page.toc==true %}
   <script>
