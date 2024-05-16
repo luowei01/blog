@@ -35,15 +35,6 @@
     });
 
     function handleMouseMove(event) {
-      // 判断 nav 是否在 main 上方，如果是，则隐藏分割线
-      if (nav.offsetTop  < main.offsetTop-10) {
-        divider.style.display = 'none';
-        divider.style.visibility = 'hidden';
-        return;
-      } else {
-        divider.style.display = 'block';
-        divider.style.visibility = 'visible';
-      }
       if (!isDragging) return;
       const mouseX = event.clientX;
       const dividerWidth = divider.offsetWidth; // 获取分割条的宽度
@@ -61,6 +52,19 @@
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
     }
+    function updateDividerVisibility() {
+      // 判断 nav 是否在 main 上方，如果是，则隐藏分割线，否则显示分割线
+      if (nav.offsetTop + nav.offsetHeight <= main.offsetTop) {
+        divider.style.visibility = 'hidden';
+      } else {
+        divider.style.visibility = 'visible';
+      }
+    }
+
+    // 当布局方向变化时调用，确保分割线的可见性随时保持最新状态
+    window.addEventListener('orientationchange', () => {
+      updateDividerVisibility(); // 使用当前分割线位置更新可见性
+    });
   </script>
 
   {% if page.toc==true %}
