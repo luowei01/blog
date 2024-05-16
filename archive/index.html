@@ -1,9 +1,47 @@
+<!--
+ * @Author       : luoweiWHUT 1615108374@qq.com
+ * @Date         : 2024-05-09 18:57:36
+ * @LastEditors  : luoweiWHUT 1615108374@qq.com
+ * @LastEditTime : 2024-05-17 00:37:17
+ * @FilePath     : \blog\archive\index.html
+ * @Description  : 
+ * Copyright (c) 2024 by luoweiWHUT email: 1615108374@qq.com, All Rights Reserved.
+-->
 ---
 layout: page
 title: 归档
 permalink: /archive/
 ---
+<style>
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    background-color: #f0f0f0;
+    font-size: 18px;
+    /* 放大字号 */
+  }
 
+  .navbar a {
+    text-decoration: none;
+    color: #333;
+  }
+
+  .current {
+    font-weight: bold;
+    color: #ff0000;
+    /* 高亮颜色 */
+  }
+</style>
+
+<div class="navbar">
+  <a href="{{ site.baseurl }}/">首页</a>
+  <a href="{{ site.baseurl }}/about/">关于</a>
+  <a href="{{ site.baseurl }}/archive/" class="current">归档</a>
+  <a href="{{ site.baseurl }}/tags/">标签</a>
+  <a href="{{ site.baseurl }}/book/" >全部博客</a>
+</div>
 {% if site.posts.size == 0 %}
   <h2>No post found</h2>
 {% endif %}

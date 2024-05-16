@@ -16,6 +16,10 @@ permalink: /book/
     text-decoration: none;
     color: #333;
   }
+  .current {
+    font-weight: bold;
+    color: #ff0000; /* 高亮颜色 */
+  }
 </style>
 
 <div class="navbar">
@@ -23,7 +27,7 @@ permalink: /book/
   <a href="{{ site.baseurl }}/about/">关于</a>
   <a href="{{ site.baseurl }}/archive/">归档</a>
   <a href="{{ site.baseurl }}/tags/">标签</a>
-  <a href="{{ site.baseurl }}/book/">全部博客</a>
+  <a href="{{ site.baseurl }}/book/" class="current">全部博客</a>
 </div>
 
 <iframe src="https://luowei01.github.io/blogs" style="width: 100%; height: calc(100vh - 80px); border: none;"></iframe>
