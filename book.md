@@ -22,4 +22,4 @@
   <a href="{{ site.baseurl }}/book/">全部博客</a>
 </div>
 
-<iframe src="https://luowei01.github.io/blogs" style="width: 100%; height: calc(100vh - 20px); border: none;"></iframe>
+<iframe src="https://luowei01.github.io/blogs" style="width: 100%; height: calc(100vh - 80px); border: none;"></iframe>
