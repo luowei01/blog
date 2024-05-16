@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 全部文章
 permalink: /book/
 ---
