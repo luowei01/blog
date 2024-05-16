@@ -438,6 +438,7 @@ nav {
 /* 当布局变为横向时的样式 */
 @media screen and (orientation: landscape) {
   .splitter {
+    display: block;
     width: 5px;
     height: 100%;
     cursor: col-resize;
