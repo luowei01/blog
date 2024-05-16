@@ -1,9 +1,43 @@
+<!--
+ * @Author       : luoweiWHUT 1615108374@qq.com
+ * @Date         : 2024-05-09 18:57:37
+ * @LastEditors  : luoweiWHUT 1615108374@qq.com
+ * @LastEditTime : 2024-05-17 00:39:57
+ * @FilePath     : \blog\about.md
+ * @Description  : 
+ * Copyright (c) 2024 by luoweiWHUT email: 1615108374@qq.com, All Rights Reserved.
+-->
 ---
-layout: page
-title: About
+layout: default
 permalink: /about/
 ---
+<style>
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    background-color: #f0f0f0;
+    font-size: 18px; /* 放大字号 */
+  }
 
+  .navbar a {
+    text-decoration: none;
+    color: #333;
+  }
+  .current {
+    font-weight: bold;
+    color: #ff0000; /* 高亮颜色 */
+  }
+</style>
+
+<div class="navbar">
+  <a href="{{ site.baseurl }}/">首页</a>
+  <a href="{{ site.baseurl }}/about/" class="current">关于</a>
+  <a href="{{ site.baseurl }}/archive/">归档</a>
+  <a href="{{ site.baseurl }}/tags/">标签</a>
+  <a href="{{ site.baseurl }}/book/" >全部博客</a>
+</div>
 ## 关于我
 你好，我是luowei,一名在读研究生，研究PCB设计自动化。
 
