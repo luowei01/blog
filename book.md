@@ -1,3 +1,7 @@
+---
+layout: default
+permalink: /about/
+---
 <style>
   .navbar {
     display: flex;
