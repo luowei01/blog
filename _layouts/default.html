@@ -36,6 +36,7 @@
 
     function handleMouseMove(event) {
       if (!isDragging) return;
+      const mouseX = event.clientX;
       const dividerWidth = divider.offsetWidth; // 获取分割条的宽度
       const navWidth = mouseX; // 根据鼠标的 X 坐标调整 nav 元素的宽度
       const mainWidth = window.innerWidth - mouseX - dividerWidth; // 根据鼠标的 X 坐标调整 main 元素的宽度
@@ -43,6 +44,7 @@
       nav.style.width = `${navWidth}px`;
       main.style.width = `${mainWidth}px`;
       main.style.marginLeft = `${navWidth}px + ${dividerWidth}px`; // 调整 main 元素的 marginLeft
+      divider.style.left = `${mouseX}px`; // 调整分割线的位置
     }
 
     function handleMouseUp(event) {

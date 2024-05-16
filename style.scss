@@ -325,7 +325,7 @@ img {
 	height: 100%;
 	top: 0;
 	left:0;
-	//position: fixed;
+	position: fixed;
 	z-index: 4;
   border-right: 1px solid $divider-color;
 
@@ -433,7 +433,7 @@ nav {
   top: 0;
   bottom: 0;
   z-index: 10;
-  left: 30%;/* 分割线与左边页面的右边界对齐 */
+  //left: 30%;/* 分割线与左边页面的右边界对齐 */
 }
 
 // content
