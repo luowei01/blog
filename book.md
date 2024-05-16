@@ -1,15 +1,9 @@
----
-layout: page
-title: 全部文章
-permalink: /book/
----
-
 <style>
   .navbar {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 20px;
+    padding: 5px;
     background-color: #f0f0f0;
     font-size: 18px; /* 放大字号 */
   }
@@ -21,11 +15,11 @@ permalink: /book/
 </style>
 
 <div class="navbar">
-  <a href="/">首页</a>
-  <a href="/about">关于</a>
-  <a href="/archive">归档</a>
-  <a href="/tags">标签</a>
-  <a href="/book">全部博客</a>
+  <a href="{{ site.baseurl }}/">首页</a>
+  <a href="{{ site.baseurl }}/about/">关于</a>
+  <a href="{{ site.baseurl }}/archive/">归档</a>
+  <a href="{{ site.baseurl }}/tags/">标签</a>
+  <a href="{{ site.baseurl }}/book/">全部博客</a>
 </div>
 
-<iframe src="https://luowei01.github.io/blogs" style="width: 100%; height: calc(100vh - 80px); border: none;"></iframe>
+<iframe src="https://luowei01.github.io/blogs" style="width: 100%; height: calc(100vh - 20px); border: none;"></iframe>
