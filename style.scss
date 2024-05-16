@@ -313,15 +313,6 @@ img {
 /*********************/
 /* LAYOUT / SECTIONS */
 /*********************/
-//sidebar和content分割线
-.splitter {
-  width: 5px;
-  cursor: col-resize;
-  background-color: #ccc;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-}
 //
 // .sidebar
 //
@@ -334,7 +325,7 @@ img {
 	height: 100%;
 	top: 0;
 	left:0;
-	position: fixed;
+	//position: fixed;
 	z-index: 4;
   border-right: 1px solid $divider-color;
 
@@ -433,11 +424,24 @@ nav {
   }
 }
 
+//sidebar和content分割线
+.splitter {
+  width: 5px;
+  cursor: col-resize;
+  background-color: #ccc;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  left: 30%;/* 分割线与左边页面的右边界对齐 */
+}
+
 // content
 
 .wrapper-content {
   float: right;
-  width: 70%;
+  width: calc(70% - 5px);
+    /* 右边页面宽度为70%，减去分割线的宽度 */
 
   @include mobile {
     float: none;
