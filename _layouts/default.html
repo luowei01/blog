@@ -54,10 +54,12 @@
     }
     function updateDividerVisibility() {
       // 判断 nav 是否在 main 上方，如果是，则隐藏分割线，否则显示分割线
-      if (nav.offsetTop + nav.offsetHeight <= main.offsetTop) {
+      if (nav.offsetTop<main.offsetTop-10) {
         divider.style.visibility = 'hidden';
+        divider.style.display = 'none';
       } else {
         divider.style.visibility = 'visible';
+        divider.style.display = 'block';
       }
     }
 
