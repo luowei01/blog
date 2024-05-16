@@ -70,12 +70,7 @@
 
     // 添加页面滚动事件监听器
     window.addEventListener('scroll', () => {
-      // 获取右侧页面滚动的垂直偏移量
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      // 更新分割线的长度
-      const mainHeight = main.offsetHeight;
-      const windowHeight = window.innerHeight;
-      const dividerHeight = windowHeight * (mainHeight / (mainHeight + scrollTop));
+      const dividerHeight = main.offsetHeight
       // 设置分割线的高度
       divider.style.height = `${dividerHeight}px`;
       });
