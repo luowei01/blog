@@ -1,12 +1,3 @@
-<!--
- * @Author       : luoweiWHUT 1615108374@qq.com
- * @Date         : 2024-05-09 18:57:36
- * @LastEditors  : luoweiWHUT 1615108374@qq.com
- * @LastEditTime : 2024-05-16 18:49:46
- * @FilePath     : \blog\_layouts\default.html
- * @Description  : 
- * Copyright (c) 2024 by luoweiWHUT email: 1615108374@qq.com, All Rights Reserved.
--->
 <!DOCTYPE html>
 <html>
   {% include head.html %}
@@ -31,8 +22,9 @@
   </body>
   
   <script>
+    const nav = document.getElementById('nav');
     const divider = document.getElementById('splitter');
-    const main = document.getElementById('main');
+    const main = document.getElementById('main'); 
 
     let isDragging = false;
 
@@ -44,8 +36,13 @@
 
     function handleMouseMove(event) {
       if (!isDragging) return;
-      const mainWidth = event.clientX;
+      const dividerWidth = divider.offsetWidth; // 获取分割条的宽度
+      const navWidth = mouseX; // 根据鼠标的 X 坐标调整 nav 元素的宽度
+      const mainWidth = window.innerWidth - mouseX - dividerWidth; // 根据鼠标的 X 坐标调整 main 元素的宽度
+      const mainLeft = mouseX + dividerWidth; // 计算 main 元素的左边界位置
+      nav.style.width = `${navWidth}px`;
       main.style.width = `${mainWidth}px`;
+      main.style.marginLeft = `${navWidth}px + ${dividerWidth}px`; // 调整 main 元素的 marginLeft
     }
 
     function handleMouseUp(event) {
