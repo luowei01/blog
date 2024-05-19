@@ -52,18 +52,23 @@
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
     }
+    let isHidden = false;
     function updateDividerVisibility() {
       // 判断 nav 是否在 main 上方，如果是，则隐藏分割线，否则显示分割线
-      if (nav.offsetTop<main.offsetTop-10) {
+      if (nav.offsetTop<main.offsetTop-10) {    
         divider.style.display = 'none';
         divider.style.visibility = 'hidden';
-        // 手动触发重绘
-        document.body.offsetWidth;// 通过获取元素的宽度来触发重绘
-      } else {
+        if (!isHidden) {
+          isHidden = true;
+          location.reload();
+        } 
+      else {
         divider.style.display = 'block';
         divider.style.visibility = 'visible';
-        // 手动触发重绘
-        document.body.offsetWidth;// 通过获取元素的宽度来触发重绘
+        if (isHidden) {
+          isHidden = false;
+          location.reload();
+        } 
       }
     }
 
