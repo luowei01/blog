@@ -65,13 +65,7 @@
 
     // 监听窗口大小变化事件
     window.addEventListener('resize', () => {
-      // 清除之前的定时器，确保只有最后一个定时器会执行
-      clearTimeout(resizeTimer);
       updateDividerVisibility(); // 调用更新可见性函数
-      resizeTimer = setTimeout(() => {
-        // 页面调整的操作
-        console.log('页面调整');
-      }, 200); // 延迟时间可以根据需要调整
     });
 
     // 添加页面滚动事件监听器
