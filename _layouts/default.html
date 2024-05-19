@@ -57,11 +57,13 @@
       if (nav.offsetTop<main.offsetTop-10) {
         divider.style.display = 'none';
         divider.style.visibility = 'hidden';
-        divider.style.width = '0px';
+        // 手动触发重绘
+        void divider.offsetWidth; // 通过获取元素的宽度来触发重绘
       } else {
         divider.style.display = 'block';
         divider.style.visibility = 'visible';
-        divider.style.width = '5px';
+        // 手动触发重绘
+        void divider.offsetWidth; // 通过获取元素的宽度来触发重绘
       }
     }
 
