@@ -57,9 +57,11 @@
       if (nav.offsetTop<main.offsetTop-10) {
         divider.style.display = 'none';
         divider.style.visibility = 'hidden';
+        const offsetTop = divider.offsetTop;
       } else {
         divider.style.display = 'block';
         divider.style.visibility = 'visible';
+        const offsetTop = divider.offsetTop;
       }
     }
 
