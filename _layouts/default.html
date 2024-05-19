@@ -57,11 +57,11 @@
       if (nav.offsetTop<main.offsetTop-10) {
         divider.style.display = 'none';
         divider.style.visibility = 'hidden';
-        const offsetTop = divider.offsetTop;
+        const offsetTop = divider.offsetTop;//计算offsetTop触发重排
       } else {
         divider.style.display = 'block';
         divider.style.visibility = 'visible';
-        const offsetTop = divider.offsetTop;
+        const offsetTop = divider.offsetTop;//计算offsetTop触发重排
       }
     }
 
