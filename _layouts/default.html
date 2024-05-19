@@ -54,7 +54,6 @@
     }
     let isHidden = false;
     function updateDividerVisibility() {
-      console.log('nav.offsetTop:', nav.offsetTop, 'main.offsetTop:', main.offsetTop,'isHidden:', isHidden);
       // 判断 nav 是否在 main 上方，如果是，则隐藏分割线，否则显示分割线
       if (nav.offsetTop<main.offsetTop-10) {    
         if (!isHidden) {
@@ -74,6 +73,7 @@
           document.body.appendChild(divider);
         } 
       }
+      console.log('nav.offsetTop:', nav.offsetTop, 'main.offsetTop:', main.offsetTop, 'isHidden:', isHidden);
     }
 
     // 监听窗口大小变化事件
