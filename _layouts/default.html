@@ -58,18 +58,20 @@
       // 判断 nav 是否在 main 上方，如果是，则隐藏分割线，否则显示分割线
       if (nav.offsetTop<main.offsetTop-10) {    
         if (!isHidden) {
-          divider.style.display = 'none';
-          divider.style.visibility = 'hidden';
           isHidden = true;
-          location.reload();
+           // 删除子元素
+          document.body.removeChild(elementToRemove);
+          // 强制重排
+          document.body.offsetWidth; // 触发重排
         }
       } 
       else {
         if (isHidden) {
-          divider.style.display = 'block';
-          divider.style.visibility = 'visible';
           isHidden = false;
-          location.reload();
+          const newSplitter = document.createElement('splitter');
+          newSplitter.id = 'splitter';
+          newSplitter.className = 'splitter';
+          document.body.appendChild(newSplitter);
         } 
       }
     }
