@@ -23,7 +23,7 @@
   
   <script>
     const nav = document.getElementById('nav');
-    const divider = document.getElementById('splitter');
+    let divider = document.getElementById('splitter');
     const main = document.getElementById('main'); 
 
     let isDragging = false;
@@ -60,7 +60,7 @@
         if (!isHidden) {
           isHidden = true;
            // 删除子元素
-          document.body.removeChild(elementToRemove);
+          document.body.removeChild(divider);
           // 强制重排
           document.body.offsetWidth; // 触发重排
         }
@@ -68,10 +68,10 @@
       else {
         if (isHidden) {
           isHidden = false;
-          const newSplitter = document.createElement('splitter');
-          newSplitter.id = 'splitter';
-          newSplitter.className = 'splitter';
-          document.body.appendChild(newSplitter);
+          divider = document.createElement('splitter');
+          divider.id = 'splitter';
+          divider.className = 'splitter';
+          document.body.appendChild(divider);
         } 
       }
     }
