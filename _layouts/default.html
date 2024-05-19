@@ -57,8 +57,6 @@
       if (nav.offsetTop<main.offsetTop-10) {
         divider.style.display = 'none';
         divider.style.visibility = 'hidden';
-        // 触发重新布局
-        document.body.offsetHeight; // 访问 offsetHeight 属性来强制浏览器重新计算布局
       } else {
         divider.style.display = 'block';
         divider.style.visibility = 'visible';
@@ -68,6 +66,8 @@
     // 监听窗口大小变化事件
     window.addEventListener('resize', () => {
       updateDividerVisibility(); // 调用更新可见性函数
+      // 触发重新布局
+      document.body.offsetHeight; // 访问 offsetHeight 属性来强制浏览器重新计算布局
     });
 
     // 添加页面滚动事件监听器
