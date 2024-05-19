@@ -434,6 +434,9 @@ nav {
   bottom: 0;
   z-index: 10;
   left: 30vw;/* 分割线与左边页面的右边界对齐 */
+  @include mobile {
+    display: none;
+  }
 }
 
 // content
