@@ -8,6 +8,7 @@ permalink: /book/
     position: fixed;
     right: 0;
     top: 0;
+    left: 0;
     justify-content: space-around;
     align-items: center;
     padding: 5px;
