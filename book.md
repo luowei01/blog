@@ -1,3 +1,7 @@
+---
+layout: page
+permalink: /book/
+---
 <style>
   .navbar {
     display: flex;
