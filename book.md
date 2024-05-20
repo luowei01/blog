@@ -33,21 +33,12 @@ permalink: /book/
     /* 与导航栏高度相同 */
   }
   @media (max-width: 600px) {
-  .navbar {
-    flex-direction: column; /* 将导航栏改为列方向排列 */
-    align-items: flex-start; /* 左对齐 */
-    padding: 10px; /* 增加内边距 */
-    height: auto; /* 自适应高度 */
-  }
-  .navbar a {
-    padding: 10px 0; /* 增加链接之间的间距 */
-  }
-  .navbar-placeholder {
-    height: auto; /* 让占位元素自适应高度 */
-  }
-  iframe {
-    height: calc(100vh - var(--navbar-height)); /* 使用CSS变量动态设置高度 */
-  }
+    .navbar-placeholder {
+      height: 40px; /* 增加占位元素高度以适应导航栏高度 */
+    }
+    iframe {
+      height: calc(100vh - 40px); /* 动态调整iframe的高度 */
+    }
   }
 </style>
 <div class="navbar">
