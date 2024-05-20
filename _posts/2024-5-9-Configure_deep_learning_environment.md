@@ -5,7 +5,7 @@ date:   2024-5-9
 tags: [深度学习]
 comments: true
 author: luowei
-Toc: true
+toc: true
 ---
 
 深度学习环境搭建-windows10,使用镜像源、conda、pip配置torch、cuda环境

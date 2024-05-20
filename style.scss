@@ -433,17 +433,27 @@ nav {
   top: 0;
   bottom: 0;
   z-index: 10;
-  left: 30vw;/* 分割线与左边页面的右边界对齐 */
+  left: auto;
+  right:auto;
   @include mobile {
     display: none;
   }
 }
 
 // content
+.wrapper-content-without-nav {
+  float: left;
+  width: 100%;
+  /* 右边页面宽度为70%，减去分割线的宽度 */
 
+  @include mobile {
+    float: none;
+    width: 100%;
+  }
+}
 .wrapper-content {
   float: right;
-  width: calc(70% - 5px);
+  width: 70%;
     /* 右边页面宽度为70%，减去分割线的宽度 */
 
   @include mobile {
@@ -534,11 +544,13 @@ nav {
 .toc {
   width: 240px;
   height: 100%;
-  left: 30%;
+  left: auto;
   position: fixed;
+  float: left;
   z-index: 4;
   padding: 60px 20px 0 20px;
-  
+  overflow: auto;
+  /* 允许内容滚动 */
   &:before{
     content:"目录";
     margin: 0 0 1em 1em;

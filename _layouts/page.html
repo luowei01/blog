@@ -4,6 +4,12 @@ layout: default_without_nav
 <style>
   .navbar {
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000; /* 确保导航栏位于其他内容上方 */
     justify-content: space-around;
     align-items: center;
     padding: 5px;

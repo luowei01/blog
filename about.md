@@ -5,6 +5,12 @@ permalink: /about/
 <style>
   .navbar {
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000; /* 确保导航栏位于其他内容上方 */
     justify-content: space-around;
     align-items: center;
     padding: 5px;
@@ -29,6 +35,13 @@ permalink: /about/
   <a href="{{ site.baseurl }}/tags/">标签</a>
   <a href="{{ site.baseurl }}/book/" >全部博客</a>
 </div>
+<style>
+  /* 空白占位元素 */
+  .navbar-placeholder {
+    height: 40px; /* 与导航栏高度相同 */
+  }
+</style>
+<div class="navbar-placeholder"></div>
 ## 关于我
 你好，我是luowei,一名在读研究生，研究PCB设计自动化。
 

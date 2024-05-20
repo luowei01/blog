@@ -2,8 +2,14 @@
 layout: default
 ---
 <style>
-  .navbar {
+  .navbar0 {
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000; /* 确保导航栏位于其他内容上方 */
     justify-content: space-around;
     align-items: center;
     padding: 5px;
@@ -12,7 +18,7 @@ layout: default
     /* 放大字号 */
   }
 
-  .navbar a {
+  .navbar0 a {
     text-decoration: none;
     color: #333;
   }
@@ -24,13 +30,21 @@ layout: default
   }
 </style>
 
-<div class="navbar">
+<div class="navbar0">
   <a href="{{ site.baseurl }}/" class="current">首页</a>
   <a href="{{ site.baseurl }}/about/">关于</a>
   <a href="{{ site.baseurl }}/archive/">归档</a>
   <a href="{{ site.baseurl }}/tags/">标签</a>
   <a href="{{ site.baseurl }}/book/" >全部博客</a>
 </div>
+<style>
+  /* 空白占位元素 */
+  .navbar-placeholder {
+    height: 40px;
+    /* 与导航栏高度相同 */
+  }
+</style>
+<div class="navbar-placeholder"></div>
 <style>
   .navbar {
     display: flex;

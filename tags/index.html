@@ -5,6 +5,12 @@ permalink: /tags/
 <style>
   .navbar {
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000; /* 确保导航栏位于其他内容上方 */
     justify-content: space-around;
     align-items: center;
     padding: 5px;
@@ -32,6 +38,14 @@ permalink: /tags/
   <a href="{{ site.baseurl }}/tags/" class="current">标签</a>
   <a href="{{ site.baseurl }}/book/" >全部博客</a>
 </div>
+<style>
+  /* 空白占位元素 */
+  .navbar-placeholder {
+    height: 40px;
+    /* 与导航栏高度相同 */
+  }
+</style>
+<div class="navbar-placeholder"></div>
 
 {% if site.posts.size == 0 %}
   <h2>No post found</h2>
