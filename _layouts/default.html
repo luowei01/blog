@@ -23,7 +23,7 @@
   
   <script>
     const nav = document.getElementById('nav');
-    let divider = document.getElementById('splitter');
+    const divider = document.getElementById('splitter');
     const main = document.getElementById('main'); 
 
     let isDragging = false;
@@ -58,19 +58,14 @@
       if (nav.offsetTop<main.offsetTop-10) {    
         if (!isHidden) {
           isHidden = true;
-           // 删除子元素
-          document.body.removeChild(divider);
-          // 强制重排
+          divider.style.display = 'none';
           document.body.offsetWidth; // 触发重排
         }
       } 
       else {
         if (isHidden) {
           isHidden = false;
-          divider = document.createElement('splitter');
-          divider.id = 'splitter';
-          divider.className = 'splitter';
-          document.body.appendChild(divider);
+          divider.style.display = 'block';
         } 
       }
       console.log('nav.offsetTop:', nav.offsetTop, 'main.offsetTop:', main.offsetTop, 'isHidden:', isHidden);
@@ -87,7 +82,6 @@
       // 设置分割线的高度
       divider.style.height = `${dividerHeight}px`;
       });
-    updateDividerVisibility();
   </script>
 
   {% if page.toc==true %}
