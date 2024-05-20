@@ -74,10 +74,9 @@
     // 监听窗口大小变化事件
     window.addEventListener('resize', () => {
       updateDividerVisibility(); // 调用更新可见性函数
-      const dividerHeight = main.offsetHeight;
-      if (divider) {
-        divider.style.height = `${dividerHeight}px`;
-      }
+      requestAnimationFrame(() => {
+        document.body.offsetWidth; // 触发重排
+      });
     });
 
     // 添加页面滚动事件监听器
