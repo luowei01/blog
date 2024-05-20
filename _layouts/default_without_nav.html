@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+
+<body>
+    <div id="splitter" class="splitter"></div>
+
+    {% if page.toc==true %}
+    <aside class="toc">
+        {% include toc.html html=content %}
+    </aside>
+    {% endif %}
+
+    <div id="main" role="main" class="wrapper-content">
+        <div class="container">
+            {{ content }}
+        </div>
+    </div>
+
+    {% include analytics.html %}
+</body>
+
+<script>
+    const nav = document.getElementById('nav');
+    const divider = document.getElementById('splitter');
+    const main = document.getElementById('main');
+
+    let isDragging = false;
+
+    divider.addEventListener('mousedown', (event) => {
+        isDragging = true;
+        document.addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('mouseup', handleMouseUp);
+    });
+
+    function handleMouseMove(event) {
+        if (!isDragging) return;
+        if (isHidden) return;
+        const mouseX = event.clientX;
+        const dividerWidth = divider.offsetWidth; // 获取分割条的宽度
+        const navWidth = mouseX; // 根据鼠标的 X 坐标调整 nav 元素的宽度
+        const mainWidth = window.innerWidth - mouseX - dividerWidth; // 根据鼠标的 X 坐标调整 main 元素的宽度
+        const mainLeft = mouseX + dividerWidth; // 计算 main 元素的左边界位置
+        nav.style.width = `${navWidth}px`;
+        main.style.width = `${mainWidth}px`;
+        main.style.marginLeft = `${navWidth}px + ${dividerWidth}px`; // 调整 main 元素的 marginLeft
+        divider.style.left = `${mouseX}px`; // 调整分割线的位置
+    }
+
+    function handleMouseUp(event) {
+        isDragging = false;
+        document.removeEventListener('mousemove', handleMouseMove);
+        document.removeEventListener('mouseup', handleMouseUp);
+    }
+    let isHidden = false;
+    function updateDividerVisibility() {
+        // 判断 nav 是否在 main 上方，如果是，则隐藏分割线，否则显示分割线
+        if (nav.offsetTop < main.offsetTop - 10) {
+            if (!isHidden) {
+                isHidden = true;
+                divider.style.display = 'none';
+                document.body.offsetWidth; // 触发重排
+            }
+        }
+        else {
+            if (isHidden) {
+                isHidden = false;
+                divider.style.display = 'block';
+            }
+        }
+        console.log('nav.offsetTop:', nav.offsetTop, 'main.offsetTop:', main.offsetTop, 'isHidden:', isHidden);
+    }
+
+    // 监听窗口大小变化事件
+    window.addEventListener('resize', () => {
+        updateDividerVisibility(); // 调用更新可见性函数
+        requestAnimationFrame(() => {
+            document.body.offsetWidth; // 触发重排
+        });
+    });
+
+    // 添加页面滚动事件监听器
+    window.addEventListener('scroll', () => {
+        if (isHidden) return;
+        const dividerHeight = main.offsetHeight
+        // 设置分割线的高度
+        divider.style.height = `${dividerHeight}px`;
+    });
+</script>
+
+{% if page.toc==true %}
+<script>
+    document.getElementById("main").classList.add("withtoc");
+</script>
+{% endif %}
+
+<div class="wrapper-footer-mobile">
+    <footer class="footer">
+        {% include footer.html %}
+    </footer>
+
+
+</html>
