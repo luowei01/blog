@@ -5,10 +5,6 @@ permalink: /book/
 <style>
   .navbar {
     display: flex;
-    position: fixed;
-    right: 0;
-    top: 0;
-    left: 0;
     justify-content: space-around;
     align-items: center;
     padding: 5px;
