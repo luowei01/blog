@@ -4,12 +4,13 @@
 
 <body>
     {% if page.toc==true %}
-    <aside class="toc">
+    <aside id='toc'class="toc">
         {% include toc.html html=content %}
     </aside>
+    <div id="splitter" class="splitter"></div>
     {% endif %}
 
-    <div id="main" role="main" class="wrapper-content_without_nav" style:"margin: 0 auto;width: 100%;padding: 0 20px;float: middle;">
+    <div id="main" role="main" class="wrapper-content_without_toc" style:"margin: 0 auto;width: 100%;padding: 0 20px;float: middle;">
         <div class="container">
             {{ content }}
         </div>
@@ -19,7 +20,7 @@
 </body>
 
 <script>
-    const nav = document.getElementById('nav');
+    const toc = document.getElementById('toc');
     const divider = document.getElementById('splitter');
     const main = document.getElementById('main');
 
@@ -36,12 +37,12 @@
         if (isHidden) return;
         const mouseX = event.clientX;
         const dividerWidth = divider.offsetWidth; // 获取分割条的宽度
-        const navWidth = mouseX; // 根据鼠标的 X 坐标调整 nav 元素的宽度
+        const tocWidth = mouseX; // 根据鼠标的 X 坐标调整 toc 元素的宽度
         const mainWidth = window.innerWidth - mouseX - dividerWidth; // 根据鼠标的 X 坐标调整 main 元素的宽度
         const mainLeft = mouseX + dividerWidth; // 计算 main 元素的左边界位置
-        nav.style.width = `${navWidth}px`;
+        toc.style.width = `${tocWidth}px`;
         main.style.width = `${mainWidth}px`;
-        main.style.marginLeft = `${navWidth}px + ${dividerWidth}px`; // 调整 main 元素的 marginLeft
+        main.style.marginLeft = `${tocWidth}px + ${dividerWidth}px`; // 调整 main 元素的 marginLeft
         divider.style.left = `${mouseX}px`; // 调整分割线的位置
     }
 
@@ -52,8 +53,8 @@
     }
     let isHidden = false;
     function updateDividerVisibility() {
-        // 判断 nav 是否在 main 上方，如果是，则隐藏分割线，否则显示分割线
-        if (nav.offsetTop < main.offsetTop - 10) {
+        // 判断 toc 是否在 main 上方，如果是，则隐藏分割线，否则显示分割线
+        if (toc.offsetTop < main.offsetTop - 10) {
             if (!isHidden) {
                 isHidden = true;
                 divider.style.display = 'none';
@@ -66,7 +67,7 @@
                 divider.style.display = 'block';
             }
         }
-        console.log('nav.offsetTop:', nav.offsetTop, 'main.offsetTop:', main.offsetTop, 'isHidden:', isHidden);
+        console.log('toc.offsetTop:', toc.offsetTop, 'main.offsetTop:', main.offsetTop, 'isHidden:', isHidden);
     }
 
     // 监听窗口大小变化事件
