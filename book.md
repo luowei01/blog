@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default_without_nav
 permalink: /book/
 ---
 <style>
