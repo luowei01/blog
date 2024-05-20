@@ -1,0 +1,11 @@
+---
+layout: null
+permalink: robots.txt
+---
+
+User-agent: *
+
+Disallow: /book/
+Disallow: /norobots/
+
+Sitemap: {{ site.url }}/sitemap.xml

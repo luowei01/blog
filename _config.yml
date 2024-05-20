@@ -5,7 +5,7 @@
 name: "luowei's blog"
 # Short bio or description (displayed in the header)
 description: "A blog for sharing my thoughts and experiences"
-
+private: true # Set to true to disable search engine indexing
 #
 # Flags below are optional
 #
