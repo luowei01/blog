@@ -32,14 +32,6 @@ permalink: /book/
     height: 40px;
     /* 与导航栏高度相同 */
   }
-  @media (max-width: 600px) {
-    .navbar-placeholder {
-      height: 40px; /* 增加占位元素高度以适应导航栏高度 */
-    }
-    iframe {
-      height: calc(100vh - 40px); /* 动态调整iframe的高度 */
-    }
-  }
 </style>
 <div class="navbar">
   <a href="{{ site.baseurl }}/">首页</a>
