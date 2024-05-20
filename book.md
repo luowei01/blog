@@ -1,7 +1,3 @@
----
-layout: default
-permalink: /book/
----
 <style>
   .navbar {
     display: flex;
