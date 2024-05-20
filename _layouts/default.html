@@ -36,6 +36,7 @@
 
     function handleMouseMove(event) {
       if (!isDragging) return;
+      if (isHidden) return;
       const mouseX = event.clientX;
       const dividerWidth = divider.offsetWidth; // 获取分割条的宽度
       const navWidth = mouseX; // 根据鼠标的 X 坐标调整 nav 元素的宽度
@@ -81,6 +82,7 @@
 
     // 添加页面滚动事件监听器
     window.addEventListener('scroll', () => {
+      if (isHidden)return;
       const dividerHeight = main.offsetHeight
       // 设置分割线的高度
       divider.style.height = `${dividerHeight}px`;

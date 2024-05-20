@@ -323,9 +323,9 @@ img {
 	background-size: cover;
 	background-color: $background-color;
 	height: 100%;
+  position: fixed;
 	top: 0;
 	left:0;
-	position: fixed;
 	z-index: 4;
   border-right: 1px solid $divider-color;
 
@@ -678,7 +678,7 @@ nav {
 
 // Footer
 .wrapper-footer-desktop {
-  margin-top: 30px;
+  margin-top: 10px;
   border-top: 1px solid $footer-border-color;
   background-color: $footer-background-color;
   position: absolute;
