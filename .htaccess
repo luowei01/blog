@@ -1,4 +1,0 @@
-AuthName "Restricted Content"
-AuthUserFile ./.htpasswd
-AuthType Basic
-Require valid-user
