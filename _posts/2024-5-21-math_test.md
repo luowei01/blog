@@ -57,10 +57,12 @@ $$
 R(x)=f(x)-p(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)\cdots(x-x_n)
 $$
 
-若 
-$ \max \limits_{a\leq x leq b}\left|f^{(n+1)}(x)\right| = M_{n+1} $ 
-则
-$\left| R_n(x) \right| \leq \frac{M_{n+1}}{(n+1)!}|(x-x_0)\cdots(x-x_n)|$
+$$
+若
+\max \limits_{a\leq x \leq b}\left|f^{(n+1)}(x)\right| = M_{n+1}
+则 
+\left| R_n(x) \right| \leq \frac{M_{n+1}}{(n+1)!}|(x-x_0)\cdots(x-x_n)|
+$$
 
 对于线性插值多项式$p(x)$,其插值余项为：
 
