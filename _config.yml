@@ -30,7 +30,7 @@ navigation:
   - name: 标签
     url: /tags
   - name: 全部博客
-    url: /book
+    url: https://blog.chateda.top/
 
 # Pagination
 paginate: 8
