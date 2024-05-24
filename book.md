@@ -41,4 +41,4 @@ permalink: /book/
   <a href="{{ site.baseurl }}/book/" class="current">全部博客</a>
 </div>
 <div class="navbar-placeholder"></div>
-<iframe src="https://blog.chateda.top/" style="width: 100%; height: calc(100vh - 40px); border: none;margin-top: 40px;"></iframe>
+<iframe src="https://chateda.top/blogs.html" style="width: 100%; height: calc(100vh - 40px); border: none;margin-top: 40px;"></iframe>
