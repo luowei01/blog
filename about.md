@@ -49,7 +49,7 @@ permalink: /about/
 
 [个人技术公众号](https://blog.csdn.net/weixin_45728532?type=blog)分享编程学习路线、编程学习资源，记录技术成长，欢迎扫码添加：
 
-![公众号二维码](https://img2.imgtp.com/2024/05/09/vMetVwXx.ico)
+![公众号二维码](https://cdn.jsdelivr.net/gh/luowei01/images/images/blog.png)
 
 
 
